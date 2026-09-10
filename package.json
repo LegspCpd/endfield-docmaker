@@ -62,5 +62,5 @@
     "pdfjs-dist": "^4.10.38",
     "qrcode-generator": "^2.0.4"
   },
-  "packageManager": "pnpm@11.22.0"
+  "packageManager": "pnpm@12.3.4"
 }
