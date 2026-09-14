@@ -2,7 +2,4 @@ packages:
   - '.'
 allowBuilds:
   esbuild: true
-onlyBuiltDependencies:
-  - '@tailwindcss/oxide'
-  - esbuild
-  - sharp
+  wasm-opt: true
