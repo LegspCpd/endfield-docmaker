@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "node -e \"fs.rmSync('build',{recursive:true,force:true})\" && vite build && node -e \"const{execSync}=require('child_process'),fs=require('fs'),path=require('path');function f(d){fs.readdirSync(d,{withFileTypes:true}).forEach(e=>{const p=path.join(d,e.name);if(e.isDirectory())f(p);else if(e.name.endsWith('.wasm')){console.log('Optimizing wasm:',p);execSync('npx wasm-opt -Oz --strip-debug --strip-dwarf \\\"'+p+'\\\" -o \\\"'+p+'\\\"',{stdio:'inherit'});}})}f('build');\"",
+    "build": "node -e \"fs.rmSync('build',{recursive:true,force:true})\" && vite build && node -e \"const{execSync}=require('child_process'),fs=require('fs'),path=require('path');function f(d){fs.readdirSync(d,{withFileTypes:true}).forEach(e=>{const p=path.join(d,e.name);if(e.isDirectory())f(p);else if(e.name.endsWith('.wasm')){console.log('Optimizing wasm:',p);execSync('npx wasm-opt --all-features -Oz --strip-debug --strip-dwarf \\\"'+p+'\\\" -o \\\"'+p+'\\\"',{stdio:'inherit'});}})}f('build');\"",
     "preview": "vite preview",
     "prepare": "svelte-kit sync || echo ''",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
